@@ -13,7 +13,7 @@ brown = (112,34,0)
 
 
 screen = pygame.display.set_mode((640,360),0,32)
-pygame.display.set_caption("the jumping ball! v0.1.1")
+pygame.display.set_caption("the jumping ball! v0.1.2")
 
 font = pygame.font.Font(None,30)
 
@@ -34,7 +34,6 @@ logy = 320
 move = "stop"
 inJumpUp = False
 inJumpDown = False
-inJump = False
 
 status = "start"
 
@@ -91,7 +90,7 @@ while True:
       if cy == 291:
         inJumpDown = False
         
-    if cx+12 > logx-20 and cx-12 < logx+20 and cy+12 > logy-20:
+    if cx+12 > logx-20 and cx-12 < logx+25 and cy+12 > logy-25:
       status = "dead"
     
     pygame.draw.circle(screen,red,(cx,cy),25)
@@ -131,6 +130,8 @@ while True:
           cy = 291
           logx = 650
           move = "stop"
+          inJumpUp = False
+          inJumpDown = False
           status = "runs"
       elif event.key == K_ESCAPE:
         pygame.quit()
