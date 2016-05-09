@@ -133,9 +133,9 @@ while True:
           inJumpUp = False
           inJumpDown = False
           status = "runs"
-      elif event.key == K_ESCAPE:
-        pygame.quit()
-        sys.exit
+        elif event.key == K_ESCAPE:
+          pygame.quit()
+          sys.exit
       elif event.type == QUIT:
         pygame.quit()
         sys.exit
